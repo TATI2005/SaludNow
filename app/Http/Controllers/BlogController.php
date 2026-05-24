@@ -94,7 +94,8 @@ class BlogController extends Controller
     // Método para la página principal pública
    // Método para renderizar la Página Principal con los artículos de MongoDB
     public function mostrarPaginaPrincipal()
-    {
+    {   
+        $articulos = DB::connection('mongodb')->table('blogs')->orderBy('created_at', 'desc')->get();
         return view('pagina-principal', compact('articulos'));
     }
 
