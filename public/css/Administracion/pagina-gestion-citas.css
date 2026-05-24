@@ -1,0 +1,84 @@
+       /* Estilos personalizados para complementar Bootstrap */
+       :root {
+           --bg-sidebar: #1f5945;
+           --confirmada: #10b981;
+           --pendiente: #f59e0b;
+           --no-asistida: #ef4444;
+       }
+
+       body {
+           background-color: #f8fafc;
+       }
+
+       @media (max-width: 768px) {
+           .main-content {
+               margin-left: 0;
+               padding: 1rem;
+           }
+       }
+
+       /* Paneles de estado (Kpi Cards) */
+       .card-stat {
+           border: none;
+           border-radius: 12px;
+           transition: transform 0.2s ease, box-shadow 0.2s ease;
+       }
+
+       .card-stat:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+       }
+
+       .icon-shape {
+           width: 48px;
+           height: 48px;
+           background: rgba(255, 255, 255, 0.2);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           border-radius: 10px;
+       }
+
+       /* Tabla y contenedores */
+       .table-container {
+           background: #ffffff;
+           border-radius: 12px;
+           border: none;
+       }
+
+       .table th {
+           font-weight: 600;
+           color: #64748b;
+           text-transform: uppercase;
+           font-size: 0.75rem;
+           letter-spacing: 0.5px;
+       }
+
+       .table td {
+           vertical-align: middle;
+           font-size: 0.9rem;
+           color: #334155;
+       }
+
+       /* Badges de estado */
+       .badge-status {
+           padding: 0.35em 0.65em;
+           border-radius: 50rem;
+           font-size: 0.75rem;
+           font-weight: 600;
+       }
+
+       .bg-confirmada-light {
+           background-color: #d1fae5;
+           color: #065f46;
+       }
+
+       .bg-pendiente-light {
+           background-color: #fef3c7;
+           color: #92400e;
+       }
+
+       .bg-no-asistida-light {
+           background-color: #fee2e2;
+           color: #991b1b;
+       }

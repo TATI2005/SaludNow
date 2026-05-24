@@ -1,0 +1,114 @@
+/* Configuración para que quepa en pantalla sin mucho scroll */
+body {
+    background: #f1f5f9;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px; /* Evita que toque los bordes en móviles */
+}
+
+.card-medico {
+    background: #ffffff;
+    padding: 20px; /* Reducido de 30px */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 500px; /* Más estrecho */
+    border-top: 4px solid #0d9488;
+}
+
+.card-medico h2 {
+    color: #0d9488;
+    text-align: center;
+    margin: 0 0 15px 0; /* Menos margen */
+    font-size: 20px; /* Texto más pequeño */
+}
+
+.grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px; /* Espacio mínimo entre inputs */
+}
+
+.wrapper-input {
+    position: relative;
+}
+.wrapper-input i {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* Sección de Días en una sola línea o rejilla apretada */
+.dias-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 5px;
+    background: #f8fafc;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 5px 0;
+}
+
+.dias-container label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px; /* Letra pequeña para los días */
+    color: #475569;
+}
+
+/* Horas lado a lado muy compactas */
+.horas-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.boton{
+    background: #0d9488;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    color: #ffffff;
+}
+
+.enlace{
+    text-decoration: none;
+    color: #5ecbc2;
+}
+
+.enlace:hover{
+color: #475569;
+}
+.form-control{
+  border: none;
+    outline: none;
+    background: #f9f8f8;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: #285a48;
+}
+
+.form-control::placeholder{
+    color: #759a98;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+option{
+    color: #475569;
+}
+
+i{
+    color: #0d9488;
+}

@@ -1,0 +1,86 @@
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bg-sidebar {
+    background-color: #5f9692 !important;
+}
+
+
+.nav-pills .nav-link,
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover,
+.nav-pills .nav-link:focus {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Iconos siempre blancos planos */
+.nav-link i,
+.nav-link.active i {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 25px;
+}
+
+.live-datetime {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.live-datetime i {
+    color: #4a7572;
+}
+
+@media (min-width: 768px) {
+    body {
+        flex-direction: row;
+    }
+
+    .sidebar-desktop {
+        width: 280px;
+        min-height: 100vh;
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .navbar-mobile {
+        display: none !important;
+    }
+
+    .main-content {
+        flex-grow: 1;
+        padding: 30px;
+        width: calc(100% - 280px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .sidebar-desktop {
+        display: none !important;
+    }
+
+    .navbar-mobile {
+        display: block !important;
+    }
+
+    .main-content {
+        padding: 15px;
+        width: 100%;
+    }
+}
+

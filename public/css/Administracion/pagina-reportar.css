@@ -1,0 +1,264 @@
+        :root {
+            --verde-oscuro: #1f5945;
+            --verde-medio: #2e7d5e;
+            --teal: #5f9692;
+            --teal-light: #eaf3f2;
+            --text-main: #1a2e25;
+            --text-muted: #6b8f7e;
+            --card-bg: #ffffff;
+            --border: #d4ede8;
+            --danger: #c0392b;
+        }
+
+        /* ── Page header ── */
+        .page-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--verde-oscuro);
+            margin: 0;
+        }
+
+        .page-header p {
+            font-size: .875rem;
+            color: var(--text-muted);
+            margin: .2rem 0 0;
+        }
+
+        .badge-count {
+            background: var(--teal-light);
+            color: var(--verde-oscuro);
+            border: 1px solid var(--teal);
+            border-radius: 20px;
+            font-size: .78rem;
+            font-weight: 600;
+            padding: .35rem .85rem;
+            white-space: nowrap;
+            align-self: center;
+        }
+
+        /* ── Alertas ── */
+        .alert-custom {
+            border-radius: 10px;
+            padding: .85rem 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            margin-bottom: 1.5rem;
+            font-size: .9rem;
+            animation: fadeInDown .35s ease;
+        }
+
+        .alert-success { background: #d4edda; border: 1px solid #b8dfc4; color: #155724; }
+        .alert-warning { background: #fff3cd; border: 1px solid #ffc107; color: #856404; }
+        .alert-error   { background: #f8d7da; border: 1px solid #f5c2c7; color: #842029; }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Cards de cita ── */
+        .citas-grid { display: grid; gap: 1.25rem; }
+
+        .cita-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(31,89,69,.06);
+            transition: box-shadow .2s, transform .2s;
+        }
+
+        .cita-card:hover { box-shadow: 0 6px 20px rgba(31,89,69,.1); transform: translateY(-1px); }
+
+        .cita-card-header {
+            background: var(--teal);
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .cita-card-header .paciente-info { color: #fff; }
+        .cita-card-header .paciente-info h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+        .cita-card-header .paciente-info span { font-size: .8rem; opacity: .85; }
+
+        .estado-badge {
+            font-size: .72rem;
+            font-weight: 700;
+            padding: .3rem .75rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        .estado-pendiente  { background: #fff3cd; color: #856404; }
+        .estado-confirmada { background: #cff4fc; color: #055160; }
+        .estado-finalizada { background: #d1e7dd; color: #0a3622; }
+        .estado-cancelada  { background: #f8d7da; color: #842029; }
+
+        .cita-card-body { padding: 1.25rem; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+            gap: .65rem 1.25rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: .68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--text-muted);
+            margin-bottom: .15rem;
+        }
+
+        .info-item span { font-size: .875rem; color: var(--text-main); font-weight: 500; }
+
+        /* ── Botón toggle ── */
+        .btn-toggle-form {
+            background: var(--teal-light);
+            color: var(--verde-oscuro);
+            border: 1.5px solid var(--teal);
+            border-radius: 8px;
+            padding: .45rem .95rem;
+            font-size: .83rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .18s, color .18s, border-color .18s;
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-toggle-form:hover {
+            background: var(--teal);
+            color: #fff;
+            border-color: var(--teal);
+        }
+
+        /* ── Formulario diagnóstico ── */
+        .diagnostico-form {
+            display: none;
+            margin-top: 1.1rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.1rem;
+            animation: slideDown .25s ease;
+        }
+
+        .diagnostico-form.open { display: block; }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-section-title {
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--teal);
+            margin-bottom: .75rem;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+        }
+
+        .form-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .form-control-custom {
+            width: 100%;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            padding: .6rem .85rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .875rem;
+            color: var(--text-main);
+            background: #fafcfb;
+            resize: vertical;
+            transition: border-color .18s, box-shadow .18s;
+            outline: none;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(95,150,146,.2);
+        }
+
+        .form-label-custom {
+            display: block;
+            font-size: .78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: .35rem;
+        }
+
+        .form-label-custom .required { color: var(--danger); margin-left: .15rem; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+        .form-group { margin-bottom: 1rem; }
+
+        .btn-enviar {
+            background: var(--teal);
+            color: #fff;
+            border: none;
+            border-radius: 9px;
+            padding: .6rem 1.4rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .875rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            transition: background .18s, transform .12s;
+        }
+
+        .btn-enviar:hover { background: #4a7572; transform: translateY(-1px); }
+        .btn-enviar:active { transform: translateY(0); }
+
+        .cancelada-note {
+            font-size: .82rem;
+            color: #842029;
+            background: #f8d7da;
+            border-radius: 8px;
+            padding: .5rem .9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+        }
+
+        /* Empty state */
+        .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-muted); }
+        .empty-state i { font-size: 3rem; color: var(--teal); margin-bottom: 1rem; display: block; }
+        .empty-state h3 { font-size: 1.1rem; color: var(--verde-oscuro); }
+        .empty-state p  { font-size: .875rem; }

@@ -1,0 +1,262 @@
+/* Contenedor del Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Altura del banner */
+    overflow: hidden;
+}
+
+/* La imagen de fondo */
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    display: block;
+}
+
+/* Capa oscura para que el texto resalte */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurece un poco la foto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* --- ANIMACIONES --- */
+
+.anim-titulo {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    /* Animación: aparece y brilla */
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+.anim-subtitulo {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0;
+    /* Aparece con retraso */
+    animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+/* Keyframes: Escalar y aparecer */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+    }
+}
+
+/* Keyframes: Deslizar hacia arriba */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .banner { height: 40vh; }
+    .anim-titulo { font-size: 2.5rem; }
+}
+
+.titulo1{
+    color: #5a8f8c;
+    font-size: 50px;
+    font-weight: 620;
+}
+
+.titulo-1{
+    color: #5a8f8c;
+}
+#imagen1{
+    width: 450px;
+}
+
+.parte1 {
+    background: #9db4b3;
+    color: #e2f8f7;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    min-height: 100px;       /* Altura opcional */
+    width: 100%;
+}
+
+.agendar-boton {
+    background: linear-gradient(135deg, #3d7a6e, #2d5e54);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 9px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(61,122,110,.3);
+    transition: all .2s;
+    position: relative;
+    left: 35px;
+}
+
+ /* ── Modal Agendar Cita ── */
+    #modalAgendarCita .modal-content {
+        border-radius: 22px;
+        overflow: hidden;
+        border: none;
+    }
+ 
+    #modalAgendarCita .modal-header {
+        background: linear-gradient(135deg, #3d7a6e 0%, #2d5e54 100%);
+        padding: 1.4rem 1.75rem;
+        border: none;
+    }
+ 
+    #modalAgendarCita .modal-title {
+        color: #fff;
+        font-size: 17px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+ 
+    #modalAgendarCita .modal-title i {
+        font-size: 20px;
+        opacity: .9;
+    }
+ 
+    #modalAgendarCita .btn-close {
+        filter: brightness(0) invert(1);
+        opacity: .8;
+    }
+ 
+    .badge-especialidad {
+        background: rgba(255,255,255,0.2);
+        color: #fff;
+        border: 1.5px solid rgba(255,255,255,0.4);
+        border-radius: 20px;
+        padding: 4px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .3px;
+    }
+ 
+    #modalAgendarCita .modal-body {
+        padding: 1.75rem;
+        background: #f8faf9;
+    }
+ 
+    /* Secciones */
+    .seccion-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: #3d7a6e;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 0;
+    }
+ 
+    .seccion-label i {
+        font-size: 14px;
+    }
+ 
+    .seccion-divider {
+        border: none;
+        border-top: 1.5px solid #d1e8e3;
+        margin: 8px 0 16px;
+    }
+ 
+    /* Campos */
+    #modalAgendarCita .form-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+        margin-bottom: 5px;
+    }
+ 
+    #modalAgendarCita .form-control,
+    #modalAgendarCita .form-select {
+        border-radius: 10px;
+        border: 1.5px solid #d1d5db;
+        font-size: 14.5px;
+        padding: 10px 14px;
+        background: #fff;
+        color: #1f2937;
+        transition: border-color .2s, box-shadow .2s;
+    }
+ 
+    #modalAgendarCita .form-control:focus,
+    #modalAgendarCita .form-select:focus {
+        border-color: #3d7a6e;
+        box-shadow: 0 0 0 3px rgba(61,122,110,.12);
+        outline: none;
+    }
+ 
+    #modalAgendarCita textarea.form-control {
+        resize: vertical;
+        min-height: 80px;
+    }
+ 
+    /* Footer */
+    #modalAgendarCita .modal-footer {
+        background: #fff;
+        border-top: 1px solid #e5e7eb;
+        padding: 1.1rem 1.75rem;
+    }
+ 
+    .btn-cancelar-cita {
+        background: transparent;
+        border: 1.5px solid #d1d5db;
+        color: #6b7280;
+        border-radius: 50px;
+        padding: 9px 22px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all .15s;
+    }
+ 
+    .btn-cancelar-cita:hover {
+        background: #f3f4f6;
+        color: #374151;
+    }
+ 
+    .btn-confirmar-cita {
+        background: linear-gradient(135deg, #3d7a6e, #2d5e54);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        padding: 9px 28px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 4px 14px rgba(61,122,110,.3);
+        transition: all .2s;
+    }
+ 
+    .btn-confirmar-cita:hover {
+        background: linear-gradient(135deg, #2d5e54, #1e4039);
+        box-shadow: 0 6px 18px rgba(61,122,110,.4);
+        transform: translateY(-1px);
+        color: #fff;
+    }
