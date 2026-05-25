@@ -6,8 +6,8 @@
     <link class="rounded-circle" rel="icon" href="{{ asset('img/logo-admin.png') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{{ asset('css/Administracion/pagina.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Administracion/pagina-reportar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/administracion/pagina.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/administracion/pagina-reportar.css') }}">
     <script src="https://kit.fontawesome.com/8f3b179c60.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <title>Reportes de Citas</title>

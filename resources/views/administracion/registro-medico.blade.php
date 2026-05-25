@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{asset('img/logo-admin.png')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Administracion/loginyregistro-m.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/administracion/loginyregistro-m.css') }}">
     <script src="https://kit.fontawesome.com/8f3b179c60.js" crossorigin="anonymous"></script>
     <title>Registro Profesional - Quibdó</title>
 </head>
