@@ -96,7 +96,8 @@ class BlogController extends Controller
     public function mostrarPaginaPrincipal()
     {   
         $articulos = DB::connection('mongodb')->table('blogs')->orderBy('created_at', 'desc')->get();
-        return view('pagina-principal', compact('articulos'));
+        $comentarios = \App\Models\Comentario::orderBy('created_at', 'desc')->get();
+        return view('pagina-principal', compact('articulos', 'comentarios'));
     }
 
     // Método para renderizar la Página de Servicios con los artículos de MongoDB
