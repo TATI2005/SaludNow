@@ -116,8 +116,10 @@ return [
 
         'mongodb' => [
             'driver'   => 'mongodb',
-            'dsn'      => env('MONGODB_URI'),
+            'dsn'      => env('MONGODB_URI', 'mongodb://127.0.0.1:27017'),
             'database' => env('DB_DATABASE', 'SaludNow'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
         ],
 
     ],
