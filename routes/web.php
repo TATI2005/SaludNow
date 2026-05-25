@@ -60,7 +60,7 @@ Route::get('/registro-medico', function () {
     return view('administracion.registro-medico'); 
 });
 
-Route::get('/login-medico', function () { 
+Route::get('', function () { 
     return view('administracion.login-medico'); 
 });
 
