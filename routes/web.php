@@ -22,10 +22,6 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
-
 Route::get('/pagina-principal', function () {
     return view('pagina-principal');
 });
@@ -84,16 +80,30 @@ Route::delete('/blog/eliminar/{id}', [BlogController::class, 'eliminarBlog']);
 Route::put('/blog/editar/{id}',  [BlogController::class, 'editarBlog']);
 
 
-
-Route::get('/', function() {
-    if (!session()->has('usuario')) {
-        return redirect('/login');
-    }
-    return app(App\Http\Controllers\BlogController::class)->mostrarPaginaPrincipal();
-});
+Route::get('/pagina-principal', [BlogController::class, 'mostrarPaginaPrincipal']);
 
 Route::get('/servicios',[BlogController::class, 'mostrarServicios']);
 
+// ANTES:
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+
+Route::get('/pagina-principal', function () {
+    return view('pagina-principal');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+// DESPUÉS:
+Route::get('/servicios', [BlogController::class, 'mostrarServicios']);
+Route::get('/pagina-principal', [BlogController::class, 'mostrarPaginaPrincipal']);
+
+Route::get('/login', function () {
+    return view('login');
+});
 
 
 Route::get('/gestion-citas', [CitaController::class, 'index'])->name('citas.index');
