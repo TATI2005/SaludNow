@@ -33,8 +33,9 @@ class BlogController extends Controller
         $nombreImagen = null;
         if ($request->hasFile('imagen_destacada')) {
             $imagen = $request->file('imagen_destacada');
-            $nombreImagen = 'blog_' . time() . '.' . $imagen->getClientOriginalExtension();
-            $imagen->move(public_path('img/blog'), $nombreImagen);
+            
+            $uploaded = cloudinary()->upload($imagen->getRealPath());
+            $nombreImagen = $uploaded->getSecurePath();
         }
 
         DB::connection('mongodb')->table('blogs')->insert([
@@ -76,8 +77,9 @@ class BlogController extends Controller
         // Si el usuario subió una nueva portada, reemplazamos la anterior
         if ($request->hasFile('imagen_destacada')) {
             $imagen = $request->file('imagen_destacada');
-            $nombreImagen = 'blog_' . time() . '.' . $imagen->getClientOriginalExtension();
-            $imagen->move(public_path('img/blog'), $nombreImagen);
+
+            $uploaded = cloudinary()->upload($imagen->getRealPath());
+            $nombreImagen = $uploaded->getSecurePath();
         }
 
         // Actualizamos en MongoDB

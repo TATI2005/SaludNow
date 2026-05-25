@@ -20,11 +20,11 @@
                         @forelse($articulos as $art)
                             <div class="col-12">
                                 <div class="card border-0 shadow-sm rounded-3 overflow-hidden custom-blog-card" style="cursor: pointer;" 
-                                     onclick="leerArticulo('{{ $art->titulo }}', '{{ $art->categoria }}', `{{ $art->contenido }}`, '{{ $art->autor ?? 'Especialista' }}', '{{ $art->created_at }}', '{{ !empty($art->imagen) ? asset('img/blog/' . $art->imagen) : '' }}')">
+                                     onclick="leerArticulo('{{ $art->titulo }}', '{{ $art->categoria }}', `{{ $art->contenido }}`, '{{ $art->autor ?? 'Especialista' }}', '{{ $art->created_at }}', '{{ !empty($art->imagen) ? $art->imagen : '' }}')">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-sm-4 col-12 style-img-container" style="height: 120px;">
                                             @if(!empty($art->imagen))
-                                                <img src="{{ asset('img/blog/' . $art->imagen) }}" class="w-100 h-100 object-fit-cover">
+                                                <img src="{{ $art->imagen }}" class="w-100 h-100 object-fit-cover">
                                             @else
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-secondary-subtle text-muted">
                                                     <i class="fa-solid fa-image fs-3 opacity-50"></i>
