@@ -7,8 +7,8 @@
    
     <link rel="icon" href="{{ asset('img/logo2.png') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Pagina-principal.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Servicios.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pagina-principal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/servicios.css') }}">
   
     <script src="https://kit.fontawesome.com/8f3b179c60.js" crossorigin="anonymous"></script>
 </head>
