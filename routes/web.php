@@ -9,9 +9,6 @@ use App\Http\Controllers\CitaController;
 use App\Http\Controllers\BlogController; 
 use App\Http\Controllers\ReportarController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/bienvenido', function () {
     return view('bienvenido');
@@ -88,7 +85,13 @@ Route::put('/blog/editar/{id}',  [BlogController::class, 'editarBlog']);
 
 
 
-Route::get('/',         [BlogController::class, 'mostrarPaginaPrincipal']);
+Route::get('/', function() {
+    if (!session()->has('usuario')) {
+        return redirect('/login');
+    }
+    return app(App\Http\Controllers\BlogController::class)->mostrarPaginaPrincipal();
+});
+
 Route::get('/servicios',[BlogController::class, 'mostrarServicios']);
 
 
