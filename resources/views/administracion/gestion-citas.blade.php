@@ -254,14 +254,7 @@
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Correo electrónico</label>
                                 <input type="email" name="email" id="edit_email" class="form-control" placeholder="correo@ejemplo.com">
-                            </div><div class="col-md-4">
-                                <label class="form-label fw-semibold">Teléfono móvil</label>
-                                <input type="tel" name="telefono" id="edit_telefono" class="form-control" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label fw-semibold">Teléfono móvil</label>
-                                <input type="tel" name="telefono" id="edit_telefono" class="form-control" required>
-                            </div>
+
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Entidad de Salud (EPS)</label>
                                 <input type="text" name="eps" id="edit_eps" class="form-control" required>
