@@ -32,5 +32,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with('articulos', $articulos);
         });
 
+         if (env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
+
     }
 }
