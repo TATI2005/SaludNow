@@ -22,4 +22,7 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 RUN chown -R www-data:www-data storage bootstrap/cache public/img
 RUN chmod -R 775 storage bootstrap/cache public/img
 
+ARG CLOUDINARY_URL
+ENV CLOUDINARY_URL=$CLOUDINARY_URL
+
 EXPOSE 80
