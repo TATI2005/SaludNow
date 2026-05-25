@@ -140,7 +140,7 @@
     </div> 
     
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="js/Administracion/dashboard.js"></script>
+    <script src="js/administracion/dashboard.js"></script>
     
     <script>
         // Variables compartidas Globales extraídas de Laravel
