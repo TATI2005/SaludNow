@@ -28,7 +28,7 @@ class ReportarController extends Controller {
         $cita = \App\Models\Cita::findOrFail($id);
  
         // Guardar diagnóstico en descripción (sin cambiar estado)
-        $cita->descripcion = implode("\n", [
+       $cita->diagnostico = implode("\n", [
             'DIAGNÓSTICO: '   . $request->diagnostico,
             'TRATAMIENTO: '   . $request->tratamiento,
             'PRÓXIMA CITA: '  . ($request->proxima_cita ?? 'No requerida'),
