@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Cloudinary\Cloudinary;
+use Cloudinary\Configuration\Configuration;
 
 class BlogController extends Controller
 {
@@ -34,8 +36,9 @@ class BlogController extends Controller
         if ($request->hasFile('imagen_destacada')) {
             $imagen = $request->file('imagen_destacada');
             
-            $uploaded = cloudinary()->upload($imagen->getRealPath());
-            $nombreImagen = $uploaded->getSecurePath();
+            $cloudinary = new \Cloudinary\Cloudinary('cloudinary://536486527658668:EzXg2wwgDMggK44LmyG-0tnt3ds@dczrmauew');
+            $uploaded = $cloudinary->uploadApi()->upload($imagen->getRealPath());
+            $nombreImagen = $uploaded['secure_url'];
         }
 
         DB::connection('mongodb')->table('blogs')->insert([
@@ -78,8 +81,9 @@ class BlogController extends Controller
         if ($request->hasFile('imagen_destacada')) {
             $imagen = $request->file('imagen_destacada');
 
-            $uploaded = cloudinary()->upload($imagen->getRealPath());
-            $nombreImagen = $uploaded->getSecurePath();
+            $cloudinary = new \Cloudinary\Cloudinary('cloudinary://536486527658668:EzXg2wwgDMggK44LmyG-0tnt3ds@dczrmauew');
+            $uploaded = $cloudinary->uploadApi()->upload($imagen->getRealPath());
+            $nombreImagen = $uploaded['secure_url'];
         }
 
         // Actualizamos en MongoDB
