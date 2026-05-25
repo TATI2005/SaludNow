@@ -60,7 +60,7 @@ Route::get('/registro-medico', function () {
     return view('administracion.registro-medico'); 
 });
 
-Route::get('', function () { 
+Route::get('/login-medico', function () { 
     return view('administracion.login-medico'); 
 });
 
@@ -93,7 +93,7 @@ Route::get('/pagina-principal', function () {
     return view('pagina-principal');
 });
 
-Route::get('/login', function () {
+Route::get('', function () {
     return view('login');
 });
 
@@ -101,9 +101,6 @@ Route::get('/login', function () {
 Route::get('/servicios', [BlogController::class, 'mostrarServicios']);
 Route::get('/pagina-principal', [BlogController::class, 'mostrarPaginaPrincipal']);
 
-Route::get('/login', function () {
-    return view('login');
-});
 
 
 Route::get('/gestion-citas', [CitaController::class, 'index'])->name('citas.index');
