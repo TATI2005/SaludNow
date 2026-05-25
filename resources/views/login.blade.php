@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logo2.png">
-    <link rel="stylesheet" href="{{ asset('css/Estilo1.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilo1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <script src="https://kit.fontawesome.com/8f3b179c60.js" crossorigin="anonymous"></script>
     <title>Inicio Sesion</title>
