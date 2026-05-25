@@ -81,7 +81,7 @@ class CitaController extends Controller {
     public function index() {
         $citas = Cita::where('medico_id', session('medico.id'))->get();
         $usuarios = \App\Models\Usuarios::all(['nombre', 'email', 'cedula']);
-        return view('Administracion.gestion-citas', compact('citas', 'usuarios'));
+        return view('administracion.gestion-citas', compact('citas', 'usuarios'));
     }
 
     public function actualizar(Request $request, $id) {

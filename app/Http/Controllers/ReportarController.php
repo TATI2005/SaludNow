@@ -13,7 +13,7 @@ class ReportarController extends Controller {
     
     public function reportarIndex() {
         $citas = \App\Models\Cita::where('medico_id', session('medico.id'))->get();
-        return view('Administracion.reportar', compact('citas'));
+        return view('administracion.reportar', compact('citas'));
     }
  
     // ── Generar PDF membretado y enviar por correo ────────────

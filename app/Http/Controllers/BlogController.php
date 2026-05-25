@@ -18,7 +18,7 @@ class BlogController extends Controller
         //  SOLUCIÓN: Especificamos la conexión de Mongo y usamos table()
         $articulos = DB::connection('mongodb')->table('blogs')->orderBy('created_at', 'desc')->get();
         
-        return view('Administracion.blog', compact('articulos'));
+        return view('administracion.blog', compact('articulos'));
     }
 
     // 2. Guardar un nuevo artículo desde el administrador o páginas principales

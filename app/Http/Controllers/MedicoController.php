@@ -23,7 +23,7 @@ class MedicoController extends Controller
             $diasSemana[] = $fecha->isoFormat('ddv'); 
             $datosGrafica[] = Cita::where('medico_id', $medicoId)->where('fecha_asignada', $fecha->format('d/m/Y'))->count();
         }
-        return view('Administracion.pagina-admin', compact('usuariosActivos', 'totalCitas', 'diasSemana', 'datosGrafica'));
+        return view('administracion.pagina-admin', compact('usuariosActivos', 'totalCitas', 'diasSemana', 'datosGrafica'));
     }
 
     public function registrar(Request $request)
