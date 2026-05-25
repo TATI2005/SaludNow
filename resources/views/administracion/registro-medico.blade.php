@@ -116,6 +116,6 @@
 </div>
 
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/Administracion/ojito-admin.js"></script>
+<script src="js/administracion/ojito-admin.js"></script>
 </body>
 </html>
