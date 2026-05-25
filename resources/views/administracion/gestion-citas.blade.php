@@ -254,6 +254,7 @@
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Correo electrónico</label>
                                 <input type="email" name="email" id="edit_email" class="form-control" placeholder="correo@ejemplo.com">
+                            </div>
 
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Entidad de Salud (EPS)</label>
