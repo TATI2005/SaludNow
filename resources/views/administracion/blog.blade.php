@@ -142,8 +142,8 @@
     </div>
 
     <!-- Inclusión del modal reutilizable -->
-    @include('Administracion.modal-nuevo-post')
-    @include('Administracion.modal-editar-post') <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    @include('administracion.modal-nuevo-post')
+    @include('administracion.modal-editar-post') <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
     <script>
        const modalEditar = document.getElementById('modalEditarPost');

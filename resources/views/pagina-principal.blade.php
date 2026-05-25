@@ -546,7 +546,7 @@
     </div>
 </div>
 
-@include('Administracion.modal-mostrar-post')
+@include('administracion.modal-mostrar-post')
 
     <script>
         function leerArticulo(titulo, categoria, contenido, autor, fecha, imagen) {
