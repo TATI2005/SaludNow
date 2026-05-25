@@ -180,6 +180,7 @@
                                                 data-eps="{{ $cita->eps }}"
                                                 data-medico="{{ $cita->nombre_medico }}"
                                                 data-fecha="{{ $cita->fecha_asignada }}"
+                                                data-email="{{ $cita->email }}"
                                                 data-hora="{{ $cita->hora_cita }}"
                                                 data-motivo="{{ $cita->motivo_especifico }}"
                                                 data-descripcion="{{ $cita->descripcion }}"
@@ -245,6 +246,10 @@
                             <div class="col-md-5">
                                 <label class="form-label fw-semibold">Dirección</label>
                                 <input type="text" name="direccion" id="edit_direccion" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Teléfono móvil</label>
+                                <input type="tel" name="telefono" id="edit_telefono" class="form-control" required>
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label fw-semibold">Teléfono móvil</label>
@@ -365,6 +370,7 @@
                     document.getElementById('edit_medico').value = nombreMedico;
                     document.getElementById('edit_fecha').value = this.getAttribute('data-fecha');
                     document.getElementById('edit_hora').value = this.getAttribute('data-hora');
+                    document.getElementById('edit_email').value = this.getAttribute('data-email') ?? '';
 
                     // 4. Procesar el estado de la cita quitando espacios extras
                     let estadoCita = this.getAttribute('data-estado') ? this.getAttribute('data-estado').trim() : 'Pendiente';
