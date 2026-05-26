@@ -99,7 +99,7 @@
         
         <div class="page-header">
             <div>
-                <h1>
+                <h1 class="titulo-pagina">
                     <i class="fa-solid fa-file-medical me-2"></i>
                     Reportes de Citas
                 </h1>
