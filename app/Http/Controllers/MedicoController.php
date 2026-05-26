@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class MedicoController extends Controller
 {
-    public function paginaAdmin()
+   public function paginaAdmin()
     {
         $medicoLogueado = session('medico');
         $medicoId = is_array($medicoLogueado) ? ($medicoLogueado['_id'] ?? $medicoLogueado['id'] ?? null) : ($medicoLogueado->_id ?? $medicoLogueado->id ?? null);
@@ -23,7 +23,13 @@ class MedicoController extends Controller
             $diasSemana[] = $fecha->isoFormat('ddv'); 
             $datosGrafica[] = Cita::where('medico_id', $medicoId)->where('fecha_asignada', $fecha->format('d/m/Y'))->count();
         }
-        return view('administracion.pagina-admin', compact('usuariosActivos', 'totalCitas', 'diasSemana', 'datosGrafica'));
+
+        // Datos por estado
+        $citasPendientes = Cita::where('medico_id', $medicoId)->where('estado', 'pendiente')->count();
+        $citasConfirmadas = Cita::where('medico_id', $medicoId)->where('estado', 'Confirmada')->count();
+        $citasNoAsistidas = Cita::where('medico_id', $medicoId)->where('estado', 'No Asistida')->count();
+
+        return view('administracion.pagina-admin', compact('usuariosActivos', 'totalCitas', 'diasSemana', 'datosGrafica', 'citasPendientes', 'citasConfirmadas', 'citasNoAsistidas'));
     }
 
     public function registrar(Request $request)

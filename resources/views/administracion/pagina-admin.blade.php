@@ -147,10 +147,94 @@
                 </div>
             </div>
 
+            <div class="row g-3 mb-4">
+    <div class="col-12 col-lg-5">
+        <div class="bg-white p-4 shadow-sm rounded-4 border-0">
+            <h5 class="fw-bold text-dark mb-4 fs-5">
+                <i class="fa-solid fa-chart-pie me-2 text-success"></i> Citas por Estado
+            </h5>
+            <div style="position: relative; height: 260px; width: 100%;">
+                <canvas id="graficaEstados"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-7">
+        <div class="bg-white p-4 shadow-sm rounded-4 border-0">
+            <h5 class="fw-bold text-dark mb-4 fs-5">
+                <i class="fa-solid fa-calendar-days me-2 text-success"></i> Próximas Citas por Día
+            </h5>
+            <div style="position: relative; height: 260px; width: 100%;">
+                <canvas id="graficaProximas"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
     </div> 
     
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="js/administracion/dashboard.js"></script>
+
+
+<script>
+// Gráfica de dona - Estados
+const ctxD = document.getElementById('graficaEstados').getContext('2d');
+new Chart(ctxD, {
+    type: 'doughnut',
+    data: {
+        labels: ['Pendientes', 'Confirmadas', 'No Asistidas'],
+        datasets: [{
+            data: [{{ $citasPendientes }}, {{ $citasConfirmadas }}, {{ $citasNoAsistidas }}],
+            backgroundColor: ['#f59e0b', '#1f5945', '#ef4444'],
+            borderWidth: 0,
+            hoverOffset: 8
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: { color: '#6b7280', font: { size: 12 }, padding: 16 }
+            }
+        }
+    }
+});
+
+// Gráfica de barras - Próximas citas
+const ctxB = document.getElementById('graficaProximas').getContext('2d');
+new Chart(ctxB, {
+    type: 'bar',
+    data: {
+        labels: diasData,
+        datasets: [{
+            label: 'Citas',
+            data: @json($datosGrafica),
+            backgroundColor: '#89cbca',
+            borderRadius: 8,
+            borderSkipped: false,
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: { color: '#8a92a6', stepSize: 1 },
+                grid: { color: '#f1f4f9' }
+            },
+            x: {
+                ticks: { color: '#8a92a6' },
+                grid: { display: false }
+            }
+        }
+    }
+});
+</script>
     
     <script>
         // Variables compartidas Globales extraídas de Laravel
