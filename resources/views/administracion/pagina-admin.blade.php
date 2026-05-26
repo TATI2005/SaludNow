@@ -10,6 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title>
 </head>
+<script>
+    setTimeout(function() {
+        alert('Tu sesión expirará en 2 minutos.');
+    }, 118 * 60 * 1000);
+
+    setTimeout(function() {
+        alert('Sesión expirada. Vuelve a iniciar sesión.');
+        window.location.href = '/login-medico';
+    }, 120 * 60 * 1000);
+</script>
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-sidebar navbar-mobile shadow-sm w-100 p-3">

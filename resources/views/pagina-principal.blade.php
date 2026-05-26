@@ -10,6 +10,16 @@
     <title>Inicio</title>
 </head>
 
+<script>
+    setTimeout(function() {
+        alert('Tu sesión expirará en 2 minutos.');
+    }, 118 * 60 * 1000);
+
+    setTimeout(function() {
+        alert('Sesión expirada. Vuelve a iniciar sesión.');
+        window.location.href = '/login';
+    }, 120 * 60 * 1000);
+</script>
 <body>
 
 @if(session('success'))

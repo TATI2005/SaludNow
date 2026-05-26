@@ -9,8 +9,19 @@
     <script src="https://kit.fontawesome.com/8f3b179c60.js" crossorigin="anonymous"></script>
     <title>Inicio Sesion</title>
 </head>
+
+<script>
+    setTimeout(function() {
+        alert('Tu sesión expirará en 2 minutos.');
+    }, 118 * 60 * 1000);
+
+    setTimeout(function() {
+        alert('Sesión expirada. Vuelve a iniciar sesión.');
+        window.location.href = '/login';
+    }, 120 * 60 * 1000);
+</script>
+
 <body>
-   
 
         @if(session('error'))
 
