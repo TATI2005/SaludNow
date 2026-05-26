@@ -50,32 +50,6 @@
         </div>
     </nav>
 
-    <div class="sidebar-desktop bg-sidebar p-3 text-white shadow-sm">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <i class="fa-solid fa-heart-pulse me-2 fs-4"></i>
-            <span class="fs-4 fw-bold">SaludAdmin</span>
-        </a>
-        <hr class="my-2">
-        <ul class="nav nav-pills flex-column mb-auto gap-1">
-            <li><a href="/pagina-admin" class="nav-link active"><i class="fa-solid fa-chart-area me-2"></i> Dashboard</a></li>
-            <li><a href="/gestion-citas" class="nav-link"><i class="fa-solid fa-calendar-check me-2"></i> Gestión de Citas</a></li>
-            <li><a href="/reportar" class="nav-link"><i class="fa-solid fa-file-invoice me-2"></i> Reportes de Citas</a></li>
-            <li><a href="/blog" class="nav-link active"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
-        </ul>
-        <hr class="my-2">
-        <div class="dropdown">
-            <a href="#" class="gap-2 d-flex align-items-center text-white text-decoration-none dropdown-toggle py-1" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945" alt="" width="32" height="32" class="rounded-circle">  
-                <strong>{{ session('medico.nombre') }}</strong>
-            </a>
-           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil"><i class="fa-solid fa-user me-2"></i> Mi Perfil</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ url('/medico/logout') }}"><i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión</a></li>
-            </ul>
-        </div>
-    </div>
-
     <div class="main-content">
         
         <div class="row g-3 mb-4 align-items-center">
@@ -146,18 +120,25 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row g-3 mb-4">
-    <div class="col-12 col-lg-5">
-        <div class="bg-white p-4 shadow-sm rounded-4 border-0">
-            <h5 class="fw-bold text-dark mb-4 fs-5">
-                <i class="fa-solid fa-chart-pie me-2 text-success"></i> Citas por Estado
-            </h5>
-            <div style="position: relative; height: 260px; width: 100%;">
-                <canvas id="graficaEstados"></canvas>
+            <div class="col-12 col-lg-5">
+                <div class="bg-white p-4 shadow-sm rounded-4 border-0" style="min-height: 380px;">
+                    <h5 class="fw-bold text-dark mb-3 fs-5">
+                        <i class="fa-solid fa-calendar me-2 text-success"></i> Calendario
+                    </h5>
+                    <div id="calendarioAdmin"></div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="col-12 col-lg-5">
+            <div class="bg-white p-4 shadow-sm rounded-4 border-0">
+                <h5 class="fw-bold text-dark mb-4 fs-5">
+                    <i class="fa-solid fa-chart-pie me-2 text-success"></i> Citas por Estado
+                </h5>
+                <div style="position: relative; height: 260px; width: 100%;">
+                    <canvas id="graficaEstados"></canvas>
+                </div>
+            </div>
+        </div>
 
     <div class="col-12 col-lg-7">
         <div class="bg-white p-4 shadow-sm rounded-4 border-0">
@@ -317,3 +298,44 @@ new Chart(ctxB, {
         </div>
     </div>
 </div>
+<script>
+const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const diasSem = ['Lu','Ma','Mi','Ju','Vi','Sá','Do'];
+let cal = new Date();
+
+function renderCal() {
+    const year = cal.getFullYear();
+    const month = cal.getMonth();
+    const today = new Date();
+    const firstDay = new Date(year, month, 1).getDay();
+    const offset = firstDay === 0 ? 6 : firstDay - 1;
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    let html = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <button onclick="cal.setMonth(cal.getMonth()-1);renderCal()" style="background:none;border:none;cursor:pointer;font-size:18px;color:#1f5945;">‹</button>
+        <span style="font-weight:500;font-size:14px;">${meses[month]} ${year}</span>
+        <button onclick="cal.setMonth(cal.getMonth()+1);renderCal()" style="background:none;border:none;cursor:pointer;font-size:18px;color:#1f5945;">›</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px;">`;
+    
+    diasSem.forEach(d => {
+        html += `<div style="text-align:center;font-size:11px;color:#6c757d;padding:4px 0;">${d}</div>`;
+    });
+    html += '</div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;">';
+    
+    for (let i = 0; i < offset; i++) html += '<div></div>';
+    
+    for (let d = 1; d <= daysInMonth; d++) {
+        const isToday = d === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+        html += `<div style="text-align:center;padding:6px 2px;border-radius:6px;font-size:13px;cursor:pointer;
+            background:${isToday ? '#1f5945' : 'transparent'};
+            color:${isToday ? '#fff' : '#333'};
+            font-weight:${isToday ? '500' : '400'};"
+            onmouseover="if(!${isToday})this.style.background='#e2f3f3'"
+            onmouseout="if(!${isToday})this.style.background='transparent'">${d}</div>`;
+    }
+    html += '</div>';
+    document.getElementById('calendarioAdmin').innerHTML = html;
+}
+renderCal();
+</script>
