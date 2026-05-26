@@ -76,11 +76,14 @@ body {
     overflow: visible !important;
 }
 
-.sidebar-desktop .dropdown-menu.show {
-    position: fixed !important;
-    bottom: 60px;
-    left: 10px;
+.sidebar-desktop .dropdown-menu {
+    position: absolute !important;
+    bottom: 100% !important;
+    top: auto !important;
+    left: 0 !important;
+    width: 250px;
     z-index: 9999;
+    margin-bottom: 8px;
 }
 
 /* Ocultar navbar mobile en desktop */

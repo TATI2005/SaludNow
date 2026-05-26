@@ -62,7 +62,7 @@
             <li><a href="/blog" class="nav-link"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
         </ul>
         <hr class="my-2">
-        <div class="dropdown">
+        <div class="dropdown  dropup">
             <a href="#" class="gap-2 d-flex align-items-center text-white text-decoration-none dropdown-toggle py-1" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945" alt="" width="32" height="32" class="rounded-circle">
                 <strong>{{ session('medico.nombre') }}</strong>
