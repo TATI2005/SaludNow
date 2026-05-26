@@ -78,3 +78,9 @@ body {
     left: 10px;
     z-index: 9999;
 }
+
+@media (max-width: 767px) {
+    .navbar-mobile {
+        display: flex !important;
+    }
+}
