@@ -100,7 +100,7 @@
         <div class="page-header">
             <div>
                 <h1>
-                    <i class="fa-solid fa-file-medical me-2" style="font-size:1.2rem;color:var(--teal)"></i>
+                    <i class="fa-solid fa-file-medical me-2"></i>
                     Reportes de Citas
                 </h1>
                 <p>Registre el diagnóstico y envíe el reporte clínico al paciente por correo.</p>

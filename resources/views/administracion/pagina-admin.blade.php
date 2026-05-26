@@ -136,7 +136,7 @@
         <div class="row g-3 mb-4">
             <div class="col-12 col-lg-7">
                 <div class="bg-white p-4 shadow-sm rounded-4 border-0" style="min-height: 380px;">
-                    <h5 class="fw-bold text-dark mb-4 fs-5">
+                    <h5 class="fw-bold mb-4 fs-5">
                         <i class="fa-solid fa-users-viewfinder me-2 text-success"></i> Monitoreo Global de Usuarios Activos
                     </h5>
                     <div style="position: relative; height: 260px; width: 100%;">
