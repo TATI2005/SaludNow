@@ -72,7 +72,8 @@ body {
     }
 }
 
-.sidebar-desktop .dropdown-menu {
+/* PON esto en su lugar */
+.sidebar-desktop .dropdown-menu.show {
     position: fixed !important;
     bottom: 60px;
     left: 10px;
