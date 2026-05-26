@@ -97,7 +97,10 @@ Route::get('', function () {
     return view('login');
 });
 
-// DESPUÉS:
+Route::get('/login', function () {
+    return view('login');
+});
+
 Route::get('/servicios', [BlogController::class, 'mostrarServicios']);
 Route::get('/pagina-principal', [BlogController::class, 'mostrarPaginaPrincipal']);
 
