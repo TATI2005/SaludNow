@@ -20,7 +20,6 @@
 </script>
 <body>
 
-    {{-- ── Navbar móvil ── --}}
     <nav class="navbar navbar-mobile navbar-expand-md navbar-dark bg-sidebar shadow-sm w-100 p-3">
         <div class="container-fluid p-0">
             <a class="navbar-brand fw-bold d-flex align-items-center text-white text-decoration-none" href="/">
@@ -46,17 +45,17 @@
                              width="32" height="32" class="rounded-circle" alt="">
                         <strong>{{ session('medico.nombre') }}</strong>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="mobUser">
-                        <li><a class="dropdown-item" href="{{ url('/medico/logout') }}">
-                            <i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión
-                        </a></li>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil"><i class="fa-solid fa-user me-2"></i> Mi Perfil</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ url('/medico/logout') }}"><i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    {{-- ── Sidebar escritorio ── --}}
+  
     <div class="sidebar-desktop bg-sidebar p-3 text-white shadow-sm">
         <a href="/" class="d-flex align-items-center mb-3 me-md-auto text-white text-decoration-none">
             <i class="fa-solid fa-heart-pulse me-2 fs-4"></i>
@@ -64,10 +63,10 @@
         </a>
         <hr class="my-2">
         <ul class="nav nav-pills flex-column mb-auto gap-1">
-            <li><a href="/pagina-admin"  class="nav-link text-white"><i class="fa-solid fa-chart-area me-2"></i> Dashboard</a></li>
+            <li><a href="/pagina-admin" class="nav-link text-white"><i class="fa-solid fa-chart-area me-2"></i> Dashboard</a></li>
             <li><a href="/gestion-citas" class="nav-link text-white"><i class="fa-solid fa-calendar-check me-2"></i> Gestión de Citas</a></li>
-            <li><a href="/reportar"      class="nav-link text-white"><i class="fa-solid fa-file-invoice me-2"></i> Reportes de Citas</a></li>
-            <li><a href="/blog"          class="nav-link text-white"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
+            <li><a href="/reportar" class="nav-link text-white"><i class="fa-solid fa-file-invoice me-2"></i> Reportes de Citas</a></li>
+            <li><a href="/blog" class="nav-link text-white"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
         </ul>
         <hr class="my-2">
         <div class="dropdown">
@@ -77,18 +76,16 @@
                      width="32" height="32" class="rounded-circle" alt="">
                 <strong>{{ session('medico.nombre') }}</strong>
             </a>
-            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="dropdownUser1">
-                <li><a class="dropdown-item" href="{{ url('/medico/logout') }}">
-                    <i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión
-                </a></li>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil"><i class="fa-solid fa-user me-2"></i> Mi Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ url('/medico/logout') }}"><i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
 
-    {{-- ── Contenido principal ── --}}
-    <div class="main-content">
 
-        {{-- Alertas --}}
+    <div class="main-content">
         @if (session('success'))
             <div class="alert-custom alert-success">
                 <i class="fa-solid fa-circle-check"></i> {{ session('success') }}
@@ -107,7 +104,7 @@
             </div>
         @endif
 
-        {{-- Encabezado --}}
+        
         <div class="page-header">
             <div>
                 <h1>
@@ -122,7 +119,7 @@
             </span>
         </div>
 
-        {{-- Lista de citas --}}
+        
         @if ($citas->isEmpty())
             <div class="empty-state">
                 <i class="fa-solid fa-calendar-xmark"></i>
@@ -134,7 +131,7 @@
                 @foreach ($citas as $cita)
                     <div class="cita-card">
 
-                        {{-- Cabecera --}}
+                        
                         <div class="cita-card-header">
                             <div class="paciente-info">
                                 <h3>
@@ -155,7 +152,7 @@
                             <span class="estado-badge {{ $estadoClass }}">{{ ucfirst($cita->estado) }}</span>
                         </div>
 
-                        {{-- Cuerpo --}}
+                        
                         <div class="cita-card-body">
                             <div class="info-grid">
                                 <div class="info-item">
@@ -190,7 +187,6 @@
                                 @endif
                             </div>
 
-                            {{-- Solo bloquear si está cancelada --}}
                             @if ($cita->estado === 'cancelada')
                                 <span class="cancelada-note">
                                     <i class="fa-solid fa-ban"></i> Cita cancelada
@@ -271,16 +267,16 @@
                                         </div>
 
                                     </form>
-                                </div>{{-- /diagnostico-form --}}
+                                </div>
                             @endif
 
-                        </div>{{-- /cita-card-body --}}
-                    </div>{{-- /cita-card --}}
+                        </div>
+                    </div>
                 @endforeach
-            </div>{{-- /citas-grid --}}
+            </div>
         @endif
 
-    </div>{{-- /main-content --}}
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -312,3 +308,24 @@
 
 </body>
 </html>
+<div class="modal fade" id="modalPerfil" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header" style="background-color: #1f5945; color: white;">
+                <h5 class="modal-title"><i class="fa-solid fa-user me-2"></i> Mi Perfil</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center p-4">
+                <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945&size=80" 
+                     class="rounded-circle mb-3" width="80" height="80">
+                <h5 class="fw-bold text-dark">{{ session('medico.nombre') }}</h5>
+                <hr>
+                <div class="text-start">
+                    <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
+                    <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
+                    <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

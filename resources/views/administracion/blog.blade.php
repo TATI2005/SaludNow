@@ -40,7 +40,9 @@
                         <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945" alt="" width="32" height="32" class="rounded-circle">  
                         <strong>{{ session('medico.nombre') }}</strong>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="mobUser">
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil"><i class="fa-solid fa-user me-2"></i> Mi Perfil</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ url('/medico/logout') }}"><i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -67,6 +69,8 @@
                 <strong>{{ session('medico.nombre') }}</strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil"><i class="fa-solid fa-user me-2"></i> Mi Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="{{ url('/medico/logout') }}"><i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión</a></li>
             </ul>
         </div>
@@ -179,3 +183,24 @@
     </script>
 </body>
 </html>
+<div class="modal fade" id="modalPerfil" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header" style="background-color: #1f5945; color: white;">
+                <h5 class="modal-title"><i class="fa-solid fa-user me-2"></i> Mi Perfil</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center p-4">
+                <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945&size=80" 
+                     class="rounded-circle mb-3" width="80" height="80">
+                <h5 class="fw-bold text-dark">{{ session('medico.nombre') }}</h5>
+                <hr>
+                <div class="text-start">
+                    <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
+                    <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
+                    <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
