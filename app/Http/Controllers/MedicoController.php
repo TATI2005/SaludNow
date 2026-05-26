@@ -59,7 +59,16 @@ class MedicoController extends Controller
     {
         $medico = Medico::where('email', $request->email)->first();
         if (!$medico || !Hash::check($request->password, $medico->password)) { return back()->with('error', 'Credenciales incorrectas'); }
-        session(['medico' => ['id' => (string)$medico->_id, '_id' => (string)$medico->_id, 'nombre' => $medico->nombre, 'especialidad' => $medico->especialidad, 'sede' => $medico->sede]]);
+        session([
+            'medico' => ['id' => (string)$medico->_id,
+            '_id' => (string)$medico->_id,
+            'nombre' => $medico->nombre,
+            'especialidad' => $medico->especialidad,
+            'sede' => $medico->sede,
+            'email' => $medico->email,
+            'telefono' => $medico->telefono,
+            'edad' => $medico->edad,
+            'horarios' => $medico->horarios]]);
         return redirect('/pagina-admin');
     }
 
