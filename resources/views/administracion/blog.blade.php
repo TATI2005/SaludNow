@@ -149,7 +149,8 @@
 
     <!-- Inclusión del modal reutilizable -->
     @include('administracion.modal-nuevo-post')
-    @include('administracion.modal-editar-post') <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    @include('administracion.modal-editar-post') 
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
     <script>
        const modalEditar = document.getElementById('modalEditarPost');
@@ -176,8 +177,5 @@
             });
         }
     </script>
-
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="js/Administracion/dashboard.js"></script>
 </body>
 </html>
