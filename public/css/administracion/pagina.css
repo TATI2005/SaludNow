@@ -3,6 +3,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--verde-oscuro);
+    margin: 0;
 }
 
 .bg-sidebar {
@@ -105,14 +109,7 @@ body {
             --danger: #c0392b;
         }
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--verde-oscuro);
-    margin: 0;
-}
-
-p{
+div p{
    font-size: .875rem;
    color: var(--text-muted);
    margin: .2rem 0 0;

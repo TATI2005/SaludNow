@@ -79,7 +79,7 @@
 
         <div class="row g-3 mb-4 align-items-center">
             <div class="col-12 col-sm-6">
-                <h2 class="fw-bold mb-0 fs-3 text-dark">Panel de Control</h2>
+                <h2 class="fw-bold mb-0 fs-3">Panel de Control</h2>
                 <small class="text-muted">Bienvenido, Dr(a). {{ session('medico.nombre') }}</small>
             </div>
             <div class="col-12 col-sm-6 text-sm-end">
