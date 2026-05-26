@@ -20,19 +20,6 @@
             margin-bottom: 2rem;
         }
 
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            color: var(--verde-oscuro);
-            margin: 0;
-        }
-
-        .page-header p {
-            font-size: .875rem;
-            color: var(--text-muted);
-            margin: .2rem 0 0;
-        }
-
         .badge-count {
             background: var(--teal-light);
             color: var(--verde-oscuro);

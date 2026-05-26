@@ -105,7 +105,15 @@ body {
             --danger: #c0392b;
         }
 
-h1, h2, h3, h4, h5, h6 {
-    font-size:1.2rem;color:var(--teal);
+h1, h2, h3, h4, h5 {
     font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--verde-oscuro);
+    margin: 0;
+}
+
+p{
+   font-size: .875rem;
+   color: var(--text-muted);
+   margin: .2rem 0 0;
 }
