@@ -79,8 +79,9 @@ body {
     z-index: 9999;
 }
 
-@media (max-width: 767px) {
+/* Ocultar navbar mobile en desktop */
+@media (min-width: 768px) {
     .navbar-mobile {
-        display: flex !important;
+        display: none !important;
     }
 }
