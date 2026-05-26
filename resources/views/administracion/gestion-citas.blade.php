@@ -82,7 +82,7 @@
             
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div>
-                    <h2 class="fw-bold m-0">Control de Citas Médicas</h2>
+                    <h2">Control de Citas Médicas</h2>
                     <p class="text-muted small m-0">Administra, edita y realiza el seguimiento de las citas asignadas.</p>
                 </div>
             </div>
