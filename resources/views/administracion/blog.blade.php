@@ -18,7 +18,8 @@
 </script>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-sidebar navbar-mobile shadow-sm w-100 p-3">
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-sidebar d-md-none  navbar-mobile shadow-sm w-100 p-3">
         <div class="container-fluid p-0">
             <a class="navbar-brand fw-bold d-flex align-items-center text-white text-decoration-none" href="/">
                 <i class="fa-solid fa-heart-pulse me-2"></i> SaludAdmin
@@ -49,7 +50,7 @@
         </div>
     </nav>
 
-    <div class="sidebar-desktop bg-sidebar p-3 text-white shadow-sm">
+    <div class="sidebar-desktop bg-sidebar p-3 d-none d-md-flex flex-column  text-white shadow-sm">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <i class="fa-solid fa-heart-pulse me-2 fs-4"></i>
             <span class="fs-4 fw-bold">SaludAdmin</span>

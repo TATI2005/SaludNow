@@ -19,7 +19,8 @@
 </script>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-sidebar navbar-mobile shadow-sm w-100 p-3">
+ 
+    <nav class="navbar navbar-expand-md navbar-dark bg-sidebar d-md-none  navbar-mobile shadow-sm w-100 p-3">
         <div class="container-fluid p-0">
             <a class="navbar-brand fw-bold d-flex align-items-center text-white text-decoration-none" href="/">
                 <i class="fa-solid fa-heart-pulse me-2"></i> SaludAdmin
@@ -29,18 +30,18 @@
             </button>
             <div class="collapse navbar-collapse mt-3" id="navMobileMenu">
                 <ul class="nav nav-pills flex-column gap-1 mb-3">
-                    <li><a href="/pagina-admin" class="nav-link text-white"><i class="fa-solid fa-chart-area me-2"></i> Dashboard</a></li>
-                    <li><a href="/gestion-citas" class="nav-link active"><i class="fa-solid fa-calendar-check me-2"></i> Gestión de Citas</a></li>
-                    <li><a href="/reportar" class="nav-link text-white"><i class="fa-solid fa-file-invoice me-2"></i> Reportes de Citas</a></li>
-                    <li><a href="/blog" class="nav-link text-white"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
+                    <li><a href="/pagina-admin" class="nav-link active"><i class="fa-solid fa-chart-area me-2"></i> Dashboard</a></li>
+                    <li><a href="/gestion-citas" class="nav-link"><i class="fa-solid fa-calendar-check me-2"></i> Gestión de Citas</a></li>
+                    <li><a href="/reportar" class="nav-link"><i class="fa-solid fa-file-invoice me-2"></i> Reportes de Citas</a></li>
+                    <li><a href="/blog" class="nav-link"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
                 </ul>
                 <hr class="text-white-50">
                 <div class="dropdown pb-2">
                     <a href="#" class="gap-2 d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="mobUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945" alt="" width="32" height="32" class="rounded-circle">  
+                        <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945" alt="" width="32" height="32" class="rounded-circle">
                         <strong>{{ session('medico.nombre') }}</strong>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="mobUser">
                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil"><i class="fa-solid fa-user me-2"></i> Mi Perfil</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ url('/medico/logout') }}"><i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar Sesión</a></li>
@@ -49,7 +50,8 @@
             </div>
         </div>
     </nav>
-     <div class="sidebar-desktop bg-sidebar p-3 text-white shadow-sm">
+
+    <div class="sidebar-desktop bg-sidebar p-3 d-none d-md-flex flex-column  text-white shadow-sm">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <i class="fa-solid fa-heart-pulse me-2 fs-4"></i>
             <span class="fs-4 fw-bold">SaludAdmin</span>
@@ -59,12 +61,12 @@
             <li><a href="/pagina-admin" class="nav-link active"><i class="fa-solid fa-chart-area me-2"></i> Dashboard</a></li>
             <li><a href="/gestion-citas" class="nav-link"><i class="fa-solid fa-calendar-check me-2"></i> Gestión de Citas</a></li>
             <li><a href="/reportar" class="nav-link"><i class="fa-solid fa-file-invoice me-2"></i> Reportes de Citas</a></li>
-            <li><a href="/blog" class="nav-link active"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
+            <li><a href="/blog" class="nav-link"><i class="fa-solid fa-globe me-2"></i> Blog</a></li>
         </ul>
         <hr class="my-2">
         <div class="dropdown">
             <a href="#" class="gap-2 d-flex align-items-center text-white text-decoration-none dropdown-toggle py-1" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945" alt="" width="32" height="32" class="rounded-circle">  
+                <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945" alt="" width="32" height="32" class="rounded-circle">
                 <strong>{{ session('medico.nombre') }}</strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
