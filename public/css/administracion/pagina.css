@@ -3,8 +3,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Playfair Display', serif;
-    color:#1f5945;
 }
 
 .bg-sidebar {
@@ -93,4 +91,21 @@ body {
     .navbar-mobile {
         display: none !important;
     }
+}
+
+  :root {
+            --verde-oscuro: #1f5945;
+            --verde-medio: #2e7d5e;
+            --teal: #5f9692;
+            --teal-light: #eaf3f2;
+            --text-main: #1a2e25;
+            --text-muted: #6b8f7e;
+            --card-bg: #ffffff;
+            --border: #d4ede8;
+            --danger: #c0392b;
+        }
+
+h1{
+    font-size:1.2rem;color:var(--teal);
+    font-family: 'Playfair Display', serif;
 }
