@@ -149,12 +149,12 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="main-content-footer">
-        <footer class="text-secondary text-center py-3 mt-4 border-top">
+
+         <footer class="text-secondary text-center py-3 mt-4 border-top">
             &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
         </footer>
     </div>
+
 
     <!-- Inclusión del modal reutilizable -->
     @include('administracion.modal-nuevo-post')
