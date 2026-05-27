@@ -269,10 +269,11 @@
         @endif
 
     </div>
-    
-     <footer class="text-secondary text-center py-3 mt-4 border-top">
-        &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
-    </footer>
+    <div class="main-content-footer">
+        <footer class="text-secondary text-center py-3 mt-4 border-top">
+            &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>

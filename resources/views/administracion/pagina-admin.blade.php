@@ -178,10 +178,11 @@
         </div>
 
     </div>
-
-    <footer class="text-secondary text-center py-3 mt-4 border-top">
-        &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
-    </footer>
+    <div class="main-content-footer">
+        <footer class="text-secondary text-center py-3 mt-4 border-top">
+            &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
+        </footer>
+    </div>
 
     <!-- Modal Perfil -->
     <div class="modal fade" id="modalPerfil" tabindex="-1">
