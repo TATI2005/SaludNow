@@ -316,30 +316,9 @@
             </div>
         </div>
     </div>
-    <footer class="footer mt-auto py-3" style="background-color: #1f5945;">
-        <div class="container-fluid px-4">
-            <div class="row align-items-center text-white">
-                
-                <!-- Logo y nombre -->
-                <div class="col-12 col-md-4 text-center text-md-start mb-2 mb-md-0">
-                    <span class="fw-bold fs-6">
-                        <i class="fa-solid fa-heart-pulse me-2"></i>SaludAdmin
-                    </span>
-                    <p class="text-white-50 small m-0">Sistema de Gestión Médica</p>
-                </div>
 
-                <!-- Centro: créditos -->
-                <div class="col-12 col-md-4 text-center mb-2 mb-md-0">
-                    <p class="small text-white-50 m-0">
-                        © {{ date('Y') }} SaludAdmin · Todos los derechos reservados
-                    </p>
-                    <p class="small text-white-50 m-0">
-                        Desarrollado para <strong class="text-white">Quibdó, Chocó</strong>
-                    </p>
-                </div>
-
-            </div>
-        </div>
+     <footer class="text-secondary text-center py-3 mt-4 border-top">
+        &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
