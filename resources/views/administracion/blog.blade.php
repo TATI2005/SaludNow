@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link class="rounded-circle" rel="icon" href="{{asset('img/logo-admin.png')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/administracion/pagina.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/administracion/p1.css') }}">
     <script src="https://kit.fontawesome.com/8f3b179c60.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Blog</title>
