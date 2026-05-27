@@ -81,7 +81,15 @@ class CitaController extends Controller {
     public function index() {
         $citas = Cita::where('medico_id', session('medico.id'))->get();
         $usuarios = \App\Models\Usuarios::all(['nombre', 'email', 'cedula']);
-        return view('administracion.gestion-citas', compact('citas', 'usuarios'));
+
+        // Conteos por estado
+        $confirmadas  = $citas->where('estado', 'confirmada')->count();
+        $pendientes   = $citas->where('estado', 'pendiente')->count();
+        $noAsistidas  = $citas->where('estado', 'no asistida')->count();
+
+        return view('administracion.gestion-citas', compact(
+            'citas', 'usuarios', 'confirmadas', 'pendientes', 'noAsistidas'
+        ));
     }
 
     public function actualizar(Request $request, $id) {

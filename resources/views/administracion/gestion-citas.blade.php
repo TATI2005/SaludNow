@@ -171,9 +171,9 @@
                                     <div class="text-muted small text-truncate" style="max-width: 200px;">{{ $cita->descripcion }}</div>
                                 </td>
                                 <td>
-                                    @if($cita->estado == 'Confirmada')
+                                    @if(strtolower($cita->estado) == 'confirmada')
                                         <span class="badge-status bg-confirmada-light">Confirmada</span>
-                                    @elseif($cita->estado == 'Pendiente')
+                                    @elseif(strtolower($cita->estado) == 'pendiente')
                                         <span class="badge-status bg-pendiente-light">Pendiente</span>
                                     @else
                                         <span class="badge-status bg-no-asistida-light">No Asistida</span>
