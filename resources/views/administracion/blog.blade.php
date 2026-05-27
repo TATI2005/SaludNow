@@ -151,7 +151,7 @@
         </div>
 
          <footer class="text-secondary text-center py-3 mt-4 border-top">
-            &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
+            &copy; {{ date('Y') }} SaludAdmin. Todos los derechos reservados.
         </footer>
     </div>
 
@@ -204,6 +204,7 @@
                     <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
                     <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
                     <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
+                    <p><i class="fa-solid fa-business-time me-2 text-success"></i> <strong>Horarios:</strong> {{ session('medico.horarios') }}</p>
                 </div>
             </div>
         </div>

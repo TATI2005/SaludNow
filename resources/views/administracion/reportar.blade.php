@@ -269,7 +269,7 @@
         @endif
 
          <footer class="text-secondary text-center py-3 mt-4 border-top">
-            &copy; {{ date('Y') }} SaludNow. Todos los derechos reservados.
+            &copy; {{ date('Y') }} SaludAdmin. Todos los derechos reservados.
         </footer>
 
     </div>
