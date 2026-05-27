@@ -104,10 +104,3 @@ body {
             --border: #d4ede8;
             --danger: #c0392b;
         }
-
-.titulo-pagina{
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--verde-oscuro);
-    margin: 0;
-}

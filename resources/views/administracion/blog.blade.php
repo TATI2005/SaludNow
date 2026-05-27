@@ -80,7 +80,7 @@
     <div class="main-content container-fluid px-4 mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div>
-                <h3 class="titulo-pagina">Consola de Control del Blog Pública</h3>
+                <h3>Consola de Control del Blog Pública</h3>
                 <small class="text-muted">Revise los artículos activos o redacte nuevas alertas de salud.</small>
             </div>
             <button class="btn btn-saludnow btn-sm px-3 rounded-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalNuevoPost">
