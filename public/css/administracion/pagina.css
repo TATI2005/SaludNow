@@ -109,7 +109,7 @@ body {
             --danger: #c0392b;
         }
 
-div p{
+.titulo-pagina{
    font-size: .875rem;
    color: var(--text-muted);
    margin: .2rem 0 0;
