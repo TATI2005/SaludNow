@@ -99,10 +99,9 @@
         
         <div class="page-header">
             <div>
-                <h1>
-                    <i class="fa-solid fa-file-medical me-2"></i>
+                <h2>
                     Reportes de Citas
-                </h1>
+                </h2>
                 <p>Registre el diagnóstico y envíe el reporte clínico al paciente por correo.</p>
             </div>
             <span class="badge-count">
@@ -321,7 +320,7 @@
                     <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
                     <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
                     <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
-                    <p class="mb-1"> <i class="fa-solid fa-clock me-1"></i> <strong>Horarios:</strong>
+                    <p class="mb-1"> <i class="fa-solid fa-clock me-2 text-success"></i> <strong>Horarios:</strong>
                         @foreach(session('medico.horarios') ?? [] as $horario)
                             {{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}
                         @endforeach

@@ -126,7 +126,9 @@
                             <h5 class="fw-bold mb-0 text-dark mt-2" style="font-size: 1.05rem;">{{ session('medico.sede') }}</h5>
                             @foreach(session('medico.horarios') ?? [] as $horario)
                             
-                                <h5>{{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}</h5>
+                                <p class="mb-1 ms-4 small">
+                                    {{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}
+                                </p>
                             @endforeach
                         </div>
                         <div class="text-warning fs-3 bg-warning bg-opacity-10 p-3 rounded-3 ms-2">
@@ -204,7 +206,7 @@
                         <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
                         <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
                         <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
-                        <p class="mb-1"> <i class="fa-solid fa-clock me-1"></i> <strong>Horarios:</strong>
+                        <p class="mb-1"> <i class="fa-solid fa-clock me-2 text-success"></i> <strong>Horarios:</strong>
                         @foreach(session('medico.horarios') ?? [] as $horario)
                                 {{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}
                             

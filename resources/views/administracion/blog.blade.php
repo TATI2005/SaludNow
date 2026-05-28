@@ -80,7 +80,7 @@
     <div class="main-content container-fluid px-4 mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div>
-                <h3>Consola de Control del Blog Pública</h3>
+                <h2>Consola de Control del Blog Pública</h2>
                 <small class="text-muted">Revise los artículos activos o redacte nuevas alertas de salud.</small>
             </div>
             <button class="btn btn-saludnow btn-sm px-3 rounded-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalNuevoPost">
@@ -204,7 +204,7 @@
                     <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
                     <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
                     <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
-                    <p class="mb-1"> <i class="fa-solid fa-clock me-1"></i> <strong>Horarios:</strong>
+                    <p class="mb-1"> <i class="fa-solid fa-clock me-2 text-success"></i> <strong>Horarios:</strong>
                         @foreach(session('medico.horarios') ?? [] as $horario)
                             {{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}
                         @endforeach
