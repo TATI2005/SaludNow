@@ -404,135 +404,31 @@
             });
         });
     </script>
-
-    <!-- Modal Editar Médico -->
-    <div class="modal fade" id="modalEditarMedico" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content border-0 shadow">
-                <div class="modal-header" style="background-color: #1f5945; color: white;">
-                    <h5 class="modal-title"><i class="fa-solid fa-user-pen me-2"></i> Editar Perfil</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <form action="/medico/actualizar" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="modal-body p-4">
-                        @if(session('error_editar'))
-                            <div class="alert alert-danger">{{ session('error_editar') }}</div>
-                        @endif
-
-                        <div class="row g-3">
-                            <!-- Nombre -->
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold">Nombre completo</label>
-                                <input type="text" name="nombre" class="form-control"
-                                    value="{{ session('medico.nombre') }}" required>
-                            </div>
-
-                            <!-- Documento -->
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold">Documento de identidad</label>
-                                <input type="text" name="documento_identidad" class="form-control"
-                                    value="{{ session('medico.documento_identidad') }}" required>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold">Correo electrónico</label>
-                                <input type="email" name="email" class="form-control"
-                                    value="{{ session('medico.email') }}" required>
-                            </div>
-
-                            <!-- Teléfono -->
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold">Teléfono</label>
-                                <input type="text" name="telefono" class="form-control"
-                                    value="{{ session('medico.telefono') }}" required>
-                            </div>
-
-                            <!-- Edad -->
-                            <div class="col-md-4">
-                                <label class="form-label fw-semibold">Edad</label>
-                                <input type="number" name="edad" class="form-control"
-                                    value="{{ session('medico.edad') }}" required>
-                            </div>
-
-                            <!-- Sede -->
-                            <div class="col-md-4">
-                                <label class="form-label fw-semibold">Sede</label>
-                                <input type="text" name="sede" class="form-control"
-                                    value="{{ session('medico.sede') }}" required>
-                            </div>
-
-                            <!-- Especialidad -->
-                            <div class="col-md-4">
-                                <label class="form-label fw-semibold">Especialidad</label>
-                                <input type="text" name="especialidad" class="form-control"
-                                    value="{{ session('medico.especialidad') }}">
-                            </div>
-
-                            <hr class="my-2">
-
-                            <!-- Horarios -->
-                            <div class="col-12">
-                                <label class="form-label fw-semibold">
-                                    <i class="fa-solid fa-clock me-1 text-success"></i> Horarios
-                                </label>
-                                <div id="contenedorHorarios">
-                                    @foreach(session('medico.horarios') ?? [] as $i => $horario)
-                                    <div class="row g-2 mb-2 fila-horario">
-                                        <div class="col-md-4">
-                                            <select name="dias[]" class="form-select" required>
-                                                @foreach(['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'] as $dia)
-                                                    <option value="{{ $dia }}" {{ $horario['dia'] === $dia ? 'selected' : '' }}>{{ $dia }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input type="time" name="horas_inicio[]" class="form-control"
-                                                value="{{ $horario['inicio'] }}" required>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input type="time" name="horas_fin[]" class="form-control"
-                                                value="{{ $horario['fin'] }}" required>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <button type="button" class="btn btn-outline-danger w-100 btn-eliminar-horario">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                                <button type="button" id="btnAgregarHorario"
-                                        class="btn btn-outline-success btn-sm mt-1">
-                                    <i class="fa-solid fa-plus me-1"></i> Agregar horario
-                                </button>
-                            </div>
-
-                            <!-- Nueva contraseña (opcional) -->
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold">Nueva contraseña <span class="text-muted fw-normal">(opcional)</span></label>
-                                <input type="password" name="password" class="form-control"
-                                    placeholder="Dejar vacío para no cambiar" minlength="6">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold">Confirmar contraseña</label>
-                                <input type="password" name="password_confirmation" class="form-control"
-                                    placeholder="Repetir nueva contraseña">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer border-0">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn text-white" style="background-color: #1f5945;">
-                            <i class="fa-solid fa-floppy-disk me-1"></i> Guardar cambios
-                        </button>
-                    </div>
-                </form>
+</body>
+</html>
+<div class="modal fade" id="modalPerfil" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header" style="background-color: #1f5945; color: white;">
+                <h5 class="modal-title"><i class="fa-solid fa-user me-2"></i> Mi Perfil</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center p-4">
+                <img src="https://ui-avatars.com/api/?name={{ session('medico.nombre') }}&background=89cbca&color=1f5945&size=80" 
+                     class="rounded-circle mb-3" width="80" height="80">
+                <h5 class="fw-bold text-dark">{{ session('medico.nombre') }}</h5>
+                <hr>
+                <div class="text-start">
+                    <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
+                    <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
+                    <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
+                    <p class="mb-1"> <i class="fa-solid fa-clock me-2 text-success"></i> <strong>Horarios:</strong>
+                        @foreach(session('medico.horarios') ?? [] as $horario)
+                            {{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}
+                        @endforeach
+                    </p>
+                        
             </div>
         </div>
     </div>
-</body>
-</html>
+</div>
