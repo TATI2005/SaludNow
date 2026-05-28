@@ -206,12 +206,12 @@
                         <p><i class="fa-solid fa-envelope me-2 text-success"></i> <strong>Correo:</strong> {{ session('medico.email') }}</p>
                         <p><i class="fa-solid fa-hospital me-2 text-success"></i> <strong>Sede:</strong> {{ session('medico.sede') }}</p>
                         <p><i class="fa-solid fa-stethoscope me-2 text-success"></i> <strong>Especialidad:</strong> {{ session('medico.especialidad') }}</p>
-                        <p class="mb-1"> <i class="fa-solid fa-clock me-2 text-success"></i> <strong>Horarios:</strong>
+                        <h6 class="mb-1"> <i class="fa-solid fa-clock me-2 text-success"></i> <strong>Horarios:</strong>
                         @foreach(session('medico.horarios') ?? [] as $horario)
                                 {{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}
                             
                         @endforeach
-                        </p>
+                        </h6>
                     </div>
                 </div>
             </div>
