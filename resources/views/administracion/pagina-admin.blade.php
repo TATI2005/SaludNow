@@ -125,10 +125,9 @@
                             <h6 class="text-muted small text-uppercase fw-bold">Sede Asignada</h6>
                             <h5 class="fw-bold mb-0 text-dark mt-2" style="font-size: 1.05rem;">{{ session('medico.sede') }}</h5>
                             @foreach(session('medico.horarios') ?? [] as $horario)
-                            <p class="mb-1 ms-4 small text-muted">
+                            
                                 {{ $horario['dia'] }} · {{ $horario['inicio'] }} - {{ $horario['fin'] }}
-                            </p>
-                        @endforeach
+                            @endforeach
                         </div>
                         <div class="text-warning fs-3 bg-warning bg-opacity-10 p-3 rounded-3 ms-2">
                             <i class="fa-solid fa-hospital"></i>
