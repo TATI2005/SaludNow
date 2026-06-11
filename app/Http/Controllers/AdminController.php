@@ -37,7 +37,7 @@ class AdminController extends Controller
                 ->count();
         }
 
-        return view('administracion.dashboard', compact(
+        return view('administracion.pagina-admin', compact(
             'citasPendientes',
             'citasConfirmadas',
             'citasNoAsistidas',
