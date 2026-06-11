@@ -8,6 +8,7 @@ use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\BlogController; 
 use App\Http\Controllers\ReportarController;
+use App\Http\Controllers\AdminController;
 
 
 Route::get('/bienvenido', function () {
@@ -116,3 +117,8 @@ Route::delete('/citas/{id}',[CitaController::class, 'eliminar']);
 
 Route::get('/reportar', [ReportarController::class, 'reportarIndex'])->name('reportar.index');
 Route::post('/enviar-diagnostico/{id}', [ReportarController::class, 'enviarDiagnosticoReporte'])->name('diagnostico.enviar');
+
+
+
+Route::get('/pagina-admin', [AdminController::class, 'dashboard'])
+     ->name('admin.dashboard');
