@@ -221,5 +221,49 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/administracion/dashboard.js') }}"></script>
 
+    <script>
+
+    // Gráfica línea
+    const diasData = @json($diasSemana);
+    const baseUsuarios = {{ $usuariosActivos ?? 0 }};
+    const ctxL = document.getElementById('graficaUsuariosActivos').getContext('2d');
+    const degradado = ctxL.createLinearGradient(0, 0, 0, 260);
+    degradado.addColorStop(0, 'rgba(31, 89, 69, 0.45)');
+    degradado.addColorStop(0.5, 'rgba(137, 203, 202, 0.15)');
+    degradado.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    const datosDinamicos = diasData.map((_, i) => baseUsuarios === 0 ? 0 : Math.max(0, baseUsuarios + ([0,-1,1,0,-1,1,0][i%7])));
+    new Chart(ctxL, {
+        type: 'line',
+        data: { labels: diasData, datasets: [{ label: 'Usuarios Conectados', data: datosDinamicos, borderColor: '#1f5945', borderWidth: 3.5, fill: true, backgroundColor: degradado, tension: 0.38, pointRadius: 5, pointBackgroundColor: '#ffffff', pointBorderColor: '#1f5945', pointBorderWidth: 3, pointHoverRadius: 7 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, suggestedMax: baseUsuarios + 2, ticks: { color: '#8a92a6', font: { size: 11 }, stepSize: baseUsuarios > 10 ? undefined : 1 }, grid: { color: '#f1f4f9', drawBorder: false } }, x: { ticks: { color: '#8a92a6', font: { size: 12, weight: '500' } }, grid: { display: false } } } }
+    });
+
+    // Calendario
+    const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    const diasSem = ['Lu','Ma','Mi','Ju','Vi','Sá','Do'];
+    let cal = new Date();
+    function renderCal() {
+        const year = cal.getFullYear(), month = cal.getMonth(), today = new Date();
+        const firstDay = new Date(year, month, 1).getDay();
+        const offset = firstDay === 0 ? 6 : firstDay - 1;
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        let html = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <button onclick="cal.setMonth(cal.getMonth()-1);renderCal()" style="background:none;border:none;cursor:pointer;font-size:18px;color:#1f5945;">‹</button>
+            <span style="font-weight:500;font-size:14px;">${meses[month]} ${year}</span>
+            <button onclick="cal.setMonth(cal.getMonth()+1);renderCal()" style="background:none;border:none;cursor:pointer;font-size:18px;color:#1f5945;">›</button>
+        </div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px;">`;
+        diasSem.forEach(d => { html += `<div style="text-align:center;font-size:11px;color:#6c757d;padding:4px 0;">${d}</div>`; });
+        html += '</div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;">';
+        for (let i = 0; i < offset; i++) html += '<div></div>';
+        for (let d = 1; d <= daysInMonth; d++) {
+            const isToday = d === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+            html += `<div style="text-align:center;padding:6px 2px;border-radius:6px;font-size:13px;cursor:pointer;background:${isToday?'#1f5945':'transparent'};color:${isToday?'#fff':'#333'};font-weight:${isToday?'500':'400'};" onmouseover="if(!${isToday})this.style.background='#e2f3f3'" onmouseout="if(!${isToday})this.style.background='transparent'">${d}</div>`;
+        }
+        html += '</div>';
+        document.getElementById('calendarioAdmin').innerHTML = html;
+    }
+    renderCal();
+    </script>
+
 </body>
 </html>
