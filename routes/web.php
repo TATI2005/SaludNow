@@ -121,4 +121,4 @@ Route::post('/enviar-diagnostico/{id}', [ReportarController::class, 'enviarDiagn
 
 
 Route::get('/pagina-admin', [AdminController::class, 'dashboard'])
-     ->name('admin.dashboard');
+     ->name('admin.pagina-admin');
