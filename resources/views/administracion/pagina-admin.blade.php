@@ -221,7 +221,7 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/administracion/dashboard.js') }}"></script>
 
-    <script>
+    <script> 
 
     // Gráfica línea
     const diasData = @json($diasSemana);

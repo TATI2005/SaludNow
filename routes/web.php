@@ -8,7 +8,6 @@ use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\BlogController; 
 use App\Http\Controllers\ReportarController;
-use App\Http\Controllers\AdminController;
 
 
 Route::get('/bienvenido', function () {
