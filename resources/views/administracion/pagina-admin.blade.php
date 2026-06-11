@@ -159,30 +159,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="row g-3 mb-4">
-            <div class="col-12 col-lg-5">
-                <div class="bg-white p-4 shadow-sm rounded-4 border-0">
-                    <h5 class="fw-bold text-dark mb-4 fs-5">
-                        <i class="fa-solid fa-chart-pie me-2 text-success"></i> Citas por Estado
-                    </h5>
-                    <div style="position: relative; height: 260px; width: 100%;">
-                        <canvas id="graficaEstados"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-7">
-                <div class="bg-white p-4 shadow-sm rounded-4 border-0">
-                    <h5 class="fw-bold text-dark mb-4 fs-5">
-                        <i class="fa-solid fa-calendar-days me-2 text-success"></i> Próximas Citas por Día
-                    </h5>
-                    <div style="position: relative; height: 260px; width: 100%;">
-                        <canvas id="graficaProximas"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        
         <footer class="text-secondary text-center py-3 mt-4 border-top">
             &copy; {{ date('Y') }} SaludAdmin. Todos los derechos reservados.
         </footer>
